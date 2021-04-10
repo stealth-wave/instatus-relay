@@ -21,7 +21,6 @@ class ThreadJob(threading.Thread):
             self.callback()
 
 ids = []
-payloads = []
 message_ids = []
 
 def check_for_maintenance():
@@ -38,7 +37,7 @@ def check_for_maintenance():
         for maintenance in r:
             embed = {
                 'title': maintenance['name'],
-                'url': 'https://status.rubellite.ml',
+                'url': f'https://status.rubellite.ml/maintenance/{maintenance["id"]}',
                 'footer': {'text': 'Status Relay Daemon', 'icon_url': 'https://static.rubellite.ml/community.png'},
                 'fields': [],
                 'timestamp': str(datetime.now())
