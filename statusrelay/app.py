@@ -1,21 +1,3 @@
-'''
-    Status Relay, an application for relaying updates through the Instatus API.
-    Copyright (C) 2021 Hiroyuki <weeb_hiroyuki@outlook.com>
-
-    This program is free software: you can redistribute it and/or modify
-    it under the terms of the GNU Affero General Public License as published
-    by the Free Software Foundation, either version 3 of the License, or
-    (at your option) any later version.
-
-    This program is distributed in the hope that it will be useful,
-    but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-    GNU Affero General Public License for more details.
-
-    You should have received a copy of the GNU Affero General Public License
-    along with this program.  If not, see <http://www.gnu.org/licenses/>.
-'''
-
 import yaml
 import os
 import requests
@@ -63,8 +45,8 @@ def check_for_maintenance():
             
             embed = {
                 'title': maintenance['name'],
-                'url': f'https://status.rubellite.ml/maintenance/{maintenance["id"]}',
-                'footer': {'text': 'Status Relay Daemon', 'icon_url': 'https://static.rubellite.ml/community.png'},
+                'url': f'https://peach.instatus.com/{maintenance["id"]}',
+                'footer': {'text': 'Status Relay Daemon', 'icon_url': 'https://res.cloudinary.com/sup/image/upload/v1618877889/dphc4qr0yixi8giinrzt.png'},
                 'fields': [],
                 'timestamp': str(datetime.now())
             }
@@ -121,8 +103,8 @@ def check_for_incidents():
 
             embed = {
                 'title': incident['name'],
-                'url': f'https://status.rubellite.ml/incident/{incident["id"]}',
-                'footer': {'text': 'Status Relay Daemon', 'icon_url': 'https://static.rubellite.ml/community.png'},
+                'url': f'https://peach.instatus.com/{incident["id"]}',
+                'footer': {'text': 'Status Relay Daemon', 'icon_url': 'https://res.cloudinary.com/sup/image/upload/v1618877889/dphc4qr0yixi8giinrzt.png'},
                 'fields': [],
                 'timestamp': str(datetime.now())
             }
